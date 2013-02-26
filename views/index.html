@@ -1,0 +1,74 @@
+{{> _head}}
+		
+		<style>
+			body{
+				background-color:#181818 ;
+			}
+			#hud{
+				width:100%; 
+				position:absolute; 
+				left:0px;top:0px;  
+				background: rgba(54, 25, 25, .1);
+				-webkit-transition: all .2s ease;
+				-moz-transition: all .2s ease;
+				transition: all .2s ease;
+			}
+			#hud:hover{
+				background: rgba(150, 00, 00, .8);
+			}
+			#hud span{
+				color:#8BA870;
+				margin-left:5px;
+				margin-right:5px;
+			}
+			#terminal{		
+				display:none;
+				width:100%; 
+				position:absolute; 
+				left:0px;top:20px;  
+				background: rgba(150, 00, 00, .8);
+				-webkit-transition: all 1.0s ease;
+				-moz-transition: all 1.0s ease;
+				transition: all 1.0s ease;
+			}
+			#hudTooltip{
+				position:absolute;
+				min-height : 100px;
+				min-width : 200px;
+				background: rgba(200, 8, 21, 0.3);
+				left:0px;
+				top:0px;
+				border: 1px solid #C80815;
+				border-radius: 15px;
+			}
+		</style>
+<body>
+		
+		<script src="js-lib/Sparks.js"></script>
+		<script src="js-lib/colladaloader.js"></script>
+		<script src="js/rf/utils.js"></script>
+		<script src="js/rf/oathjs.js"></script>
+		<script src="js/rf/settings.js"></script>
+		<script src="js/rf/configuration.js"></script>
+		<script src="js/rf/helper.js"></script>
+		<script src="js/rf/engine.js"></script>
+		<script src="js/rf/toddler.js"></script>
+		<script src="js/rf/world.js"></script>
+		<script src="js/rf/communication.js"></script>
+		<script src="js/rf/terminal.js"></script>
+		
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script>
+			var application = null;
+			jQuery(function($) {	
+				application = new OATHJS.TODDLER();		
+				console.info('Application started');
+			});
+		</script>
+		<div class='hud' id='hud'>
+			<span id='version'>Toddler v.01</span> | <span id='position'></span> | <span id='camera'></span> | <span id='mouse'></span> | <span id='world'></span> | <span id='zone'></span> |<span id='rotation'></span> | <span id='speed'></span> | <span id='info'></span>
+		</div>
+		<div id="hudTooltip" ></div>
+		<div  id='terminal'>
+		</div>
+{{> _foot}}

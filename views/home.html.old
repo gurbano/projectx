@@ -1,0 +1,54 @@
+{{> _head}}
+		
+		<style>
+			body{
+				background-color:#181818 ;
+			}
+			#hud{
+				width:100%; 
+				position:absolute; 
+				left:0px;top:0px;  
+				background: rgba(54, 25, 25, .1);
+				-webkit-transition: all .2s ease;
+				-moz-transition: all .2s ease;
+				transition: all .2s ease;
+			}
+			#hud:hover{
+				background: rgba(150, 00, 00, .8);
+			}
+			#hud span{
+				color:#8BA870;
+				margin-left:5px;
+				margin-right:5px;
+			}
+			#terminal{		
+				display:none;
+				width:100%; 
+				position:absolute; 
+				left:0px;top:20px;  
+				background: rgba(150, 00, 00, .8);
+				-webkit-transition: all 1.0s ease;
+				-moz-transition: all 1.0s ease;
+				transition: all 1.0s ease;
+			}
+		
+		</style>
+<body>
+		
+		<script src="js/toddler.js"></script>
+		<script src="js/toddler.com.js"></script>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script>
+			jQuery(function($) {	
+				//Chat.initialize('http://toddler-7138.onmodulus.net');
+				Chat.initialize('http://localhost/');
+				OATHJS.TODDLER.start();			
+				OATHJS.TODDLER.startTerminal();	
+			});
+		</script>
+		<div class='hud' id='hud'>
+			<span id='version'>Toddler v.01</span> | <span id='position'></span> | <span id='mouseposition'></span> | <span id='zone'></span> |<span id='rotation'></span> | <span id='speed'></span> | <span id='info'></span>
+		</div>
+		<div  id='terminal'>
+		</div>
+{{> _foot}}
