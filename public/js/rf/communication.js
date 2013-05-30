@@ -8,19 +8,19 @@ OATHJS.TODDLER.COM = function() {
 	this.handler = null;
 	this.socket = null;
 	this.send = function(data){
-		com.socket.emit('client2server',data);
+		//com.socket.emit('client2server',data);
 	};
 	this.init = function(engine){	
 		com.engine = engine;
-		com.handler = new OATHJS.TODDLER.COM.HANDLER();
-		com.handler.init(engine);
+		//com.handler = new OATHJS.TODDLER.COM.HANDLER();
+		//com.handler.init(engine);
 	};
   /*CONSTRUCTOR*/
   (function(socketURL) {
-		com.socket = io.connect(socketURL);
-		com.socket.on('server2client', function(data){
-			com.handler.process(data.type, data.uid, data);
-		}); 
+		//com.socket = io.connect(socketURL);
+		//com.socket.on('server2client', function(data){
+			//com.handler.process(data.type, data.uid, data);
+		//}); 
    })();
 };
 OATHJS.TODDLER.COM.HANDLER = function() {

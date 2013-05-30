@@ -30,6 +30,11 @@ OATHJS.TODDLER.HELPER = function(aConf) {
 			object.matrix.multiply( rotationMatrix );                       // post-multiply
 			object.rotation.setEulerFromRotationMatrix( object.matrix );
 	};
+	this.getSphereMesh = function(radius){
+		var sphere = new THREE.Mesh(new THREE.SphereGeometry(radius,10, 10),
+		new THREE.MeshLambertMaterial({wireframe:true, color: 0xCC00ee}));
+		return sphere;
+	};
 	
   /*CONSTRUCTOR*/
   (function() {

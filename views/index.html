@@ -44,8 +44,7 @@
 		</style>
 <body>
 		
-		<script src="js-lib/Sparks.js"></script>
-		<script src="js-lib/colladaloader.js"></script>
+	
 		<script src="js/rf/utils.js"></script>
 		<script src="js/rf/oathjs.js"></script>
 		<script src="js/rf/settings.js"></script>
@@ -56,8 +55,10 @@
 		<script src="js/rf/world.js"></script>
 		<script src="js/rf/communication.js"></script>
 		<script src="js/rf/terminal.js"></script>
+		<script src="js/rf/TerrainGeneration.js"></script>
+		<script src="js/rf/fps.js"></script>
 		
-		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		
 		<script>
 			var application = null;
 			jQuery(function($) {	
@@ -66,7 +67,7 @@
 			});
 		</script>
 		<div class='hud' id='hud'>
-			<span id='version'>Toddler v.01</span> | <span id='position'></span> | <span id='camera'></span> | <span id='mouse'></span> | <span id='world'></span> | <span id='zone'></span> |<span id='rotation'></span> | <span id='speed'></span> | <span id='info'></span>
+			<span id='version'>Toddler v.01</span> | <span id='position'></span> | <span id='camera'></span> | <span id='sphere'></span> | <span id='mouse'></span> | <span id='world'></span> | <span id='zone'></span> |<span id='rotation'></span> | <span id='speed'></span> | <span id='info'></span>
 		</div>
 		<div id="hudTooltip" ></div>
 		<div  id='terminal'>

@@ -6,13 +6,13 @@ var OATHJS = {};
 
 OATHJS.TODDLER = function(){
 	var app = this;
-	var model,
-		workers, 
-		configuration,
-		helper,	 
-		engine,
-		settings,
-		terminal;
+	app.model,
+		app.workers, 
+		app.configuration,
+		app.helper,	 
+		app.engine,
+		app.settings,
+		app.terminal;
 	
 	app.start = function(){
 		settings = new OATHJS.TODDLER.SETTINGS();
@@ -22,7 +22,7 @@ OATHJS.TODDLER = function(){
 		engine = new OATHJS.TODDLER.ENGINE(helper,configuration);
 		
 		engine.init(
-			new THREE.Vector3(10,10,0), //STARTING POSITION : LOAD FROM DB
+			new THREE.Vector3(0,25,0), //STARTING POSITION : LOAD FROM DB
 			function(){
 				engine.start(function(){
 					helper.toast('Visualization process started');
@@ -31,7 +31,10 @@ OATHJS.TODDLER = function(){
 				document.body.appendChild( engine.stats.domElement );		
 				document.addEventListener( 'mousemove', engine.onMouseMove, false );	
 				document.addEventListener( 'mouseup', engine.onMouseUp, false );
-				document.addEventListener( 'mousedown', engine.onMouseDown, false );	
+				document.addEventListener( 'mousedown', engine.onMouseDown, false );
+				document.addEventListener( 'keydown', engine.onKeyDown, false );
+				document.addEventListener( 'keyup', engine.onKeyUp, false );
+				
 				$(document).mousewheel( function(e, delta){
 					engine.zoom(delta);
 				});					
